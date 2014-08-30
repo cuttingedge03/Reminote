@@ -16,6 +16,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:text="Showing content"
+        android:textStyle="bold"
         android:textColor="#000000"
         android:textSize="17sp" />
 

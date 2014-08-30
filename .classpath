@@ -5,7 +5,5 @@
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
-	<classpathentry kind="src" path="/actionbarsherlocks"/>
-	<classpathentry kind="src" path="/librarylist"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

@@ -5,7 +5,7 @@
  <!-- pressed -->
     <item android:drawable="@drawable/box2" android:state_focused="true"/>
  <!-- focused -->
-    <item android:drawable="@drawable/box"/>
+    <item android:drawable="@drawable/widget_background"/>
  <!-- default -->
 
 </selector>

@@ -14,6 +14,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="39dp"
             android:text="Title"
+            android:textColor="#000"
             android:textSize="15sp" />
 
         <EditText
@@ -21,6 +22,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:hint="Title"
+            android:textColor="#000"
             android:singleLine="true" >
 
             <requestFocus />
@@ -31,6 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
             android:text="Content"
+            android:textColor="#000"
             android:textSize="15sp" />
 
         <EditText
@@ -38,6 +41,7 @@
             android:layout_width="fill_parent"
             android:layout_height="match_parent"
             android:hint="Write something"
+            android:textColor="#000"
             android:minLines="1"
             android:scrollbars="vertical" >
         </EditText>

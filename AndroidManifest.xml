@@ -4,15 +4,22 @@
     android:versionCode="1"
     android:versionName="1.0" >
 
-    
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="21" />
+
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
     <application
         android:allowBackup="true"
         android:hardwareAccelerated="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/Theme.Sherlock.Light.DarkActionBar" >
+        android:theme="@android:style/Theme.Holo" >
         <activity
-            android:name="com.nadeem.todos.MainActivity"
+            android:name="com.nadeem.todos.activities.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,43 +27,50 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.nadeem.todos.AddTodoActivity"
-android:label="Add">
-</activity>
-<activity android:name="com.nadeem.todos.ShowActivity1"
-android:label="Content">
-</activity>
-<activity android:name="com.nadeem.todos.About"
-android:label="About">
-</activity>
-<activity android:name="com.nadeem.todos.FeedBack"
-android:label="Feedback">
-</activity>
-<receiver android:name=".todo_widget" android:label="Reminote(2x4)">
-        <intent-filter>
-        <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-        <action android:name="com.nadeem.todos.ACTION_WIDGET_REFRESH" />
-        <action android:name="com.nadeem.todos.ACTION_WIDGET_OPEN" />
-        </intent-filter>
-        <meta-data
-        android:name="android.appwidget.provider"
-        android:resource="@xml/abc"
-/></receiver>
-<receiver android:name=".TimeAlarm" android:process=":remote" >
-    <data android:scheme="timer:" />
-</receiver>
+        <activity
+            android:name="com.nadeem.todos.activities.AddTodoActivity"
+            android:label="Add" >
+        </activity>
+        <activity
+            android:name="com.nadeem.todos.activities.ShowActivity"
+            android:label="Content" >
+        </activity>
+        <activity
+            android:name="com.nadeem.todos.activities.AboutActivity"
+            android:label="About" >
+        </activity>
+        <activity
+            android:name="com.nadeem.todos.activities.FeedBackActivity"
+            android:label="Feedback" >
+        </activity>
+        <receiver
+            android:name="com.nadeem.todos.receiver.TimeAlarm"
+            android:process=":remote" >
+            <data android:scheme="timer:" />
+        </receiver>
+        <receiver
+            android:name=".provider.WidgetProvider"
+            android:icon="@drawable/ic_launcher"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_provider2" />
+        </receiver>
+
+        <service
+            android:name=".service.WidgetService"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
     </application>
-    <uses-sdk
-        android:minSdkVersion="8"
-        android:targetSdkVersion="17" />
-    <uses-permission android:name="android.permission.SEND_SMS"/>
-    <uses-permission android:name="android.permission.WAKE_LOCK"/>
-    <uses-permission android:name="android.permission.VIBRATE" />
-    
-    <supports-screens android:xlargeScreens="true"
-android:largeScreens="true"
-android:normalScreens="true"
-android:smallScreens="true"
-android:anyDensity="true"/>
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
 
 </manifest>
